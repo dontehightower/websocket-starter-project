@@ -1,4 +1,12 @@
+// This file creates the express server, serves the
+// static HTML file in the public directory, and
+// establishes the server-side websocket. 
+
+// The client-side websocket is established in the
+// /public/chat.js file
+
 const express = require('express');
+const socket = require('socket.io');
 // App setup
 const app = express();
 const server = app.listen(4000, function(){
@@ -7,3 +15,12 @@ const server = app.listen(4000, function(){
 
 // Static files
 app.use(express.static('public'));
+
+// Socket setup
+const io = socket(server);
+
+
+// When the socket connects, fire a callback function
+io.on('connection', function(socket) {
+  console.log('Socket connected to server', socket.id);
+})

@@ -19,4 +19,4 @@ A server is being created using Node.js and Express to run the application on.
 ### Setting up WebSockets
 - The Socket.io library is being used to set up websockets
 
-- One socket is placed in the static HTML file, and another is placed in the index.js server file, to set up a socket link between the HTML file each user views to the server
+- One socket is placed in the front-end(static HTML file), and another is placed in the backend(index.js server file), to set up a socket link between the HTML file each user views to the server
